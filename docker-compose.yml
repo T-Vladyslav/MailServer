@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  opendkim:
+    build: ./opendkim
+    container_name: opendkim_service
+    environment:
+      - OPENDKIM_DB_SERVER=${OPENDKIM_DB_SERVER}
+      - OPENDKIM_DB_NAME=${OPENDKIM_DB_NAME}
+      - OPENDKIM_DB_USER=${OPENDKIM_DB_USER}
+      - OPENDKIM_DB_PASS=${OPENDKIM_DB_PASS}
+    #   TZ: ${TZ:-UTC}
+    ports:
+      - "8891:8891"
+    command: ["/entrypoint.sh"]
+
+  policyd:
+    build: ./policyd
+    container_name: policyd_service
+    environment:
+      - POLICYD_DB_SERVER=${POLICYD_DB_SERVER}
+      - POLICYD_DB_NAME=${POLICYD_DB_NAME}
+      - POLICYD_DB_USER=${POLICYD_DB_USER}
+      - POLICYD_DB_PASS=${POLICYD_DB_PASS}
+    ports:
+      - "10031:10031"
+    command: ["/entrypoint.sh"]
