@@ -11,7 +11,11 @@ cp cluebringer-v2.0.14/cbpadmin /usr/local/bin/
 cp cluebringer-v2.0.14/cbpolicyd /usr/local/sbin/
 
 # Installing perl modules
-cpanm < perl_modules.txt
+# cpanm < perl_modules.txt
+
+# MySQL Server status 
+echo 'Waiting for the MySQL to start'
+./wait-for POLICYD_DB_SERVER:3306 -- echo "MySQL is up and running"
 
 # Starting policyd
 touch /var/log/cbpolicyd.log
