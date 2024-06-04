@@ -7,7 +7,8 @@ RUN \
     apt-get install libopendbx1-mysql libopendbx1 -y && \
     apt-get install rsyslog -y && \
     apt-get install supervisor -y && \
-    apt-get install gettext-base -y && \ 
+    apt-get install gettext-base -y && \
+    apt-get install netcat -y && \ 
     apt-get clean -y
 
 # ENV OPENDKIM_DB_SERVER=127.0.0.1
@@ -26,6 +27,9 @@ RUN chmod +x /etc/supervisor/*.sh
 
 COPY src/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+COPY pkg/wait-for /wait-for
+RUN chmod +x /wait-for
 
 EXPOSE 8891
 
