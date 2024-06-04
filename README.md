@@ -24,8 +24,8 @@ You should also create a file with variables named .env in the root of the proje
 | `OPENDKIM_DB_USER` | The name of the database user. **Attention!** You shall not use an administrator account. | `opendkim` |
 | `OPENDKIM_DB_PASS` | The password of the database user | `STRONGPASS` |
 | `POLICYD_DB_SERVER` | The hostname or IP address of the database server. | `127.0.0.1` |
-| `POLICYD_DB_NAME` | The name of the opendkim database.  | `opendkim` |
-| `POLICYD_DB_USER` | The name of the database user. **Attention!** You shall not use an administrator account. | `opendkim` |
+| `POLICYD_DB_NAME` | The name of the opendkim database.  | `policyd` |
+| `POLICYD_DB_USER` | The name of the database user. **Attention!** You shall not use an administrator account. | `policyd` |
 | `POLICYD_DB_PASS` | The password of the database user | `STRONGPASS` |
 
 Here's an example of what the contents of your .env file might look like:
