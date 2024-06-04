@@ -29,6 +29,7 @@ You should also create a file with variables named .env in the root of the proje
 | `POLICYD_DB_PASS` | The password of the database user | `STRONGPASS` |
 
 Here's an example of what the contents of your .env file might look like:
+```sh
 POLICYD_DB_SERVER=127.0.0.1
 POLICYD_DB_NAME=policyd
 POLICYD_DB_USER=policyd
@@ -38,6 +39,7 @@ OPENDKIM_DB_SERVER=127.0.0.1
 OPENDKIM_DB_NAME=opendkim
 OPENDKIM_DB_USER=opendkim
 OPENDKIM_DB_PASS=STRONGPASS
+```
 
 ### OpenDKIM
 Creating a database and user for OpenDKIM
