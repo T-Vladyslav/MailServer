@@ -26,7 +26,7 @@ RUN cpanm < perl_modules.txt
 COPY src/entrypoin.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-COPY pkg/wait-for /wait-for
+COPY src/wait-for /wait-for
 RUN chmod +x /wait-for
 
 EXPOSE 10031

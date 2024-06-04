@@ -28,7 +28,7 @@ RUN chmod +x /etc/supervisor/*.sh
 COPY src/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-COPY pkg/wait-for /wait-for
+COPY src/wait-for /wait-for
 RUN chmod +x /wait-for
 
 EXPOSE 8891

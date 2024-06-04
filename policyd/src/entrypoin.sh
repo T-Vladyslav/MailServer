@@ -15,7 +15,9 @@ cp cluebringer-v2.0.14/cbpolicyd /usr/local/sbin/
 
 # MySQL Server status 
 echo 'Waiting for the MySQL to start'
-./wait-for POLICYD_DB_SERVER:3306 -- echo "MySQL is up and running"
+./wait-for $POLICYD_DB_SERVER:3306 -t 60
+sleep 5
+echo "MySQL is up and running"
 
 # Starting policyd
 touch /var/log/cbpolicyd.log
